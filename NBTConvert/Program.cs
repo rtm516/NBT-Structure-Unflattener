@@ -525,27 +525,31 @@ namespace NBTConvert
 				if (name.StringValue.Contains("vine"))
 				{
 					NbtString east = properties.Get<NbtString>("east");
-					if (east != null && east.StringValue == "true")
+					if (east == null)
 					{
 						properties.Add(new NbtString("facing", "east"));
+						continue;
 					}
 
 					NbtString south = properties.Get<NbtString>("south");
-					if (south != null && south.StringValue == "true")
+					if (south == null)
 					{
 						properties.Add(new NbtString("facing", "south"));
+						continue;
 					}
 
 					NbtString north = properties.Get<NbtString>("north");
-					if (north != null && north.StringValue == "true")
+					if (north == null)
 					{
 						properties.Add(new NbtString("facing", "north"));
+						continue;
 					}
 
 					NbtString west = properties.Get<NbtString>("west");
-					if (west != null && west.StringValue == "true")
+					if (west == null)
 					{
 						properties.Add(new NbtString("facing", "west"));
+						continue;
 					}
 				}
 
