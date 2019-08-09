@@ -59,6 +59,10 @@ namespace NBTConvert
 						break;
 					case "minecraft:wall_torch":
 						name.Value = "minecraft:torch";
+						if (properties.Get<NbtString>("facing") == null)
+						{
+							properties.Add(new NbtString("facing", "north"));
+						}
 						break;
 					case "minecraft:oak_fence":
 						name.Value = "minecraft:fence";
